@@ -6,6 +6,7 @@ class Player
     {
         IsHuman = isHuman;
     }
+
     public bool correctInput = true;
 
     ShotsLeft sl = new ShotsLeft();
@@ -117,10 +118,9 @@ class Player
         {
             correctInput = true;
         }
+
         return choice;
     }
-
-    Random rnd = new Random();
 
     private char ComputerRandomRoll()
     {
@@ -129,20 +129,18 @@ class Player
 
         if (sl.ShotCount() == 0)
         {
-            index = rnd.Next(2, 4);
+            index = RandomHelper.ComputerRandomInterval24();
         }
         else if (sl.ShotCount() > 0 && sl.ShotCount() < 3)
         {
-            index = rnd.Next(0, 5);
+            index = RandomHelper.ComputerRandomInterval05();
         }
         else
         {
-            index = rnd.Next(5, 9);
+            index = RandomHelper.ComputerRandomInterval59();
         }
         return choices[index];
     }
-
-
 
     public void NotValidInput(int choice)
     {
@@ -155,6 +153,7 @@ class Player
         ];
         //Console.WriteLine(choice);
         Console.WriteLine("\n" + errorMessage[choice]);
-        Console.ReadKey();
+        Thread.Sleep(2000);
+        //Console.ReadKey();
     }
 }
