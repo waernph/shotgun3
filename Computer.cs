@@ -9,7 +9,7 @@ class Computer
         set { randomChoice = value; }
     }
 
-    public void ComputerRandomRoll()
+    public char ComputerRandomRoll()
     {
         string choices = "ssllbbhhhh";
         int index;
@@ -26,6 +26,6 @@ class Computer
         {
             index = rnd.Next(5, 9);
         }
-        RandomChoice = choices[index];
+        return RandomChoice = choices[index];
     }
 }
