@@ -2,7 +2,7 @@ class Player
 {
     private bool IsHuman { get; set; }
 
-    public Player(bool isHuman)
+    public Player(bool isHuman = false)
     {
         IsHuman = isHuman;
     }
@@ -49,8 +49,6 @@ class Player
         }
         return char.ToLower(Console.ReadKey().KeyChar);
     }
-
-    Computer computer = new Computer();
 
     public int PlayerChoice()
     {
@@ -109,10 +107,6 @@ class Player
                 //Console.Clear();
                 break;
         }
-        if (choice >= 100)
-        {
-            NotValidInput(choice);
-        }
         return choice;
     }
 
@@ -138,7 +132,7 @@ class Player
         return choices[index];
     }
 
-    private void NotValidInput(int choice)
+    public void NotValidInput(int choice)
     {
         choice -= 100;
         string[] errorMessage =
@@ -149,6 +143,5 @@ class Player
         ];
         //Console.WriteLine(choice);
         Console.WriteLine("\n" + errorMessage[choice]);
-        Console.ReadLine();
     }
 }
