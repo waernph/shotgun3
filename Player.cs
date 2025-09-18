@@ -1,19 +1,15 @@
 class Player
 {
-    private string name = "";
-    private bool isHuman = true;
-    public string Name
+    private bool isHuman;
+    public bool IsHuman { get; set; }
+    public Player(bool isHuman)
     {
-        get { return name; }
-        set { name = value; }
+        IsHuman = isHuman;
     }
-    public bool IsHuman
+    ShotsLeft sl = new ShotsLeft();
+
+    public int DisplayPlayersShots()
     {
-        get { return isHuman; }
-        set { isHuman = value; }
+        return sl.ShotCount();
     }
-
-    ShotsLeft shotsLeft = new ShotsLeft();
-
-
 }

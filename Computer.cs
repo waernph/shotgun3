@@ -1,33 +1,31 @@
-class Random
+class Computer
 {
-    private char RandomChoice;
-    public char randomChoice
+    private static Random rnd = new Random();
+    static ShotsLeft shotsLeft = new ShotsLeft();
+    private char randomChoice = 'a';
+    public char RandomChoice
     {
-        get { return RandomChoice; }
-        set { RandomChoice = value; }
+        get { return randomChoice; }
+        set { randomChoice = value; }
     }
 
-    private char ComputerChoice()
+    public void ComputerRandomRoll()
     {
-        Random rnd = new Random();
-        ShotsLeft shotsLeft = new ShotsLeft();
-
         string choices = "ssllbbhhhh";
+        int index;
 
         if (shotsLeft.ShotCount() == 0)
         {
-            int index = rnd.Next(2, 4);
-            return choices[index];
+            index = rnd.Next(2, 4);
         }
         else if (shotsLeft.ShotCount() > 0 && shotsLeft.ShotCount() < 3)
         {
-            int index = rnd.Next(0, 5);
-            return choices[index];
+            index = rnd.Next(0, 5);
         }
         else
         {
-            int index = rnd.Next(5, 9);
-            return choices[index];
+            index = rnd.Next(5, 9);
         }
+        RandomChoice = choices[index];
     }
 }
