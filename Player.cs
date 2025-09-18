@@ -6,6 +6,7 @@ class Player
     {
         IsHuman = isHuman;
     }
+    public bool correctInput = true;
 
     ShotsLeft sl = new ShotsLeft();
 
@@ -107,6 +108,15 @@ class Player
                 //Console.Clear();
                 break;
         }
+        if (choice >= 100)
+        {
+            correctInput = false;
+            NotValidInput(choice);
+        }
+        else
+        {
+            correctInput = true;
+        }
         return choice;
     }
 
@@ -132,6 +142,8 @@ class Player
         return choices[index];
     }
 
+
+
     public void NotValidInput(int choice)
     {
         choice -= 100;
@@ -143,5 +155,6 @@ class Player
         ];
         //Console.WriteLine(choice);
         Console.WriteLine("\n" + errorMessage[choice]);
+        Console.ReadKey();
     }
 }

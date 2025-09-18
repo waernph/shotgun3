@@ -12,12 +12,15 @@ class Program
 
         while (gameOn)
         {
-            Console.Clear();
-            gfx.ShotgunLogo();
-            Console.WriteLine(
-                $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
-            );
-            player1.PlayerChoice();
+            while (player1.correctInput)
+            {
+                Console.Clear();
+                gfx.ShotgunLogo();
+                Console.WriteLine(
+                    $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
+                );
+                player1.PlayerChoice();
+            }
             player2.PlayerChoice();
         }
     }
