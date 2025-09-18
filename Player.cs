@@ -1,6 +1,6 @@
 class Player
 {
-    private bool isHuman;
+    //private bool isHuman;
     public bool IsHuman { get; set; }
     public Player(bool isHuman)
     {
@@ -11,5 +11,13 @@ class Player
     public int DisplayPlayersShots()
     {
         return sl.ShotCount();
+    }
+    public void FireShot()
+    {
+        sl.FireShot();
+    }
+    public void LoadShot()
+    {
+        sl.LoadShot();
     }
 }
