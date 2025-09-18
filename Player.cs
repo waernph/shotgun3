@@ -1,7 +1,7 @@
+
 class Player
 {
-    //private bool isHuman;
-    public bool IsHuman { get; set; }
+    private bool IsHuman { get; set; }
 
     public Player(bool isHuman)
     {
@@ -55,14 +55,14 @@ class Player
 
     public int PlayerChoice()
     {
-        int UserInput;
+        char UserInput;
         if (IsHuman) //Avgör om spelare ska få välja eller om det ska slumpas
         {
             UserInput = PlayerInput();
         }
         else
         {
-            UserInput = computer.ComputerRandomRoll();
+            UserInput = ComputerRandomRoll();
             Console.WriteLine(UserInput);
         }
 
@@ -112,5 +112,26 @@ class Player
                 break;
         }
         return choice;
+    }
+
+    Random rnd = new Random();
+    private char ComputerRandomRoll()
+    {
+        string choices = "ssllbbhhhh";
+        int index;
+
+        if (sl.ShotCount() == 0)
+        {
+            index = rnd.Next(2, 4);
+        }
+        else if (sl.ShotCount() > 0 && sl.ShotCount() < 3)
+        {
+            index = rnd.Next(0, 5);
+        }
+        else
+        {
+            index = rnd.Next(5, 9);
+        }
+        return choices[index];
     }
 }

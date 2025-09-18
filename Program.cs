@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.Security.Cryptography.X509Certificates;
+
+class Program
 {
     public static void Main()
     {
@@ -12,9 +14,10 @@
             Console.Clear();
             gfx.ShotgunLogo();
             Console.WriteLine(
-            $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   spelare 2: {player2.DisplayPlayersShots()} skott"
+                $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
             );
             player1.PlayerChoice();
+            player2.PlayerChoice();
         }
     }
 }

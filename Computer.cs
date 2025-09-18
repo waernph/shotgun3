@@ -1,13 +1,14 @@
 class Computer
 {
-    private static Random rnd = new Random();
+    Random rnd = new Random();
     static ShotsLeft shotsLeft = new ShotsLeft();
-    private char randomChoice = 'a';
-    public char RandomChoice
-    {
-        get { return randomChoice; }
-        set { randomChoice = value; }
-    }
+
+    /*     private char randomChoice;
+        public char RandomChoice
+        {
+            get { return randomChoice; }
+            set { randomChoice = value; }
+        } */
 
     public char ComputerRandomRoll()
     {
@@ -16,7 +17,7 @@ class Computer
 
         if (shotsLeft.ShotCount() == 0)
         {
-            index = rnd.Next(2, 4);
+            index = rnd.Next(4, 4);
         }
         else if (shotsLeft.ShotCount() > 0 && shotsLeft.ShotCount() < 3)
         {
@@ -26,6 +27,6 @@ class Computer
         {
             index = rnd.Next(5, 9);
         }
-        return RandomChoice = choices[index];
+        return choices[index];
     }
 }
