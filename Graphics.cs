@@ -12,4 +12,17 @@ class Graphics
     "
         );
     }
+
+    public void NotValidInput(int choice)
+    {
+        choice -= 100;
+        string[] errorMessage =
+        [
+            "Du har inga skott, försök inte!",
+            "Valet finns inte. Försök igen",
+            "Du måste ha minst 3 skott",
+        ];
+        //Console.WriteLine(choice);
+        Console.WriteLine(errorMessage[choice]);
+    }
 }

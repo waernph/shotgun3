@@ -1,4 +1,3 @@
-
 class Player
 {
     private bool IsHuman { get; set; }
@@ -63,7 +62,6 @@ class Player
         else
         {
             UserInput = ComputerRandomRoll();
-            Console.WriteLine(UserInput);
         }
 
         int choice = 101;
@@ -108,13 +106,18 @@ class Player
                 {
                     choice = 101; //felkod. felaktigt knapptryck
                 }
-                Console.Clear();
+                //Console.Clear();
                 break;
+        }
+        if (choice >= 100)
+        {
+            NotValidInput(choice);
         }
         return choice;
     }
 
     Random rnd = new Random();
+
     private char ComputerRandomRoll()
     {
         string choices = "ssllbbhhhh";
@@ -133,5 +136,19 @@ class Player
             index = rnd.Next(5, 9);
         }
         return choices[index];
+    }
+
+    private void NotValidInput(int choice)
+    {
+        choice -= 100;
+        string[] errorMessage =
+        [
+            "Du har inga skott, försök inte!",
+            "Valet finns inte. Försök igen",
+            "Du måste ha minst 3 skott",
+        ];
+        //Console.WriteLine(choice);
+        Console.WriteLine("\n" + errorMessage[choice]);
+        Console.ReadLine();
     }
 }
