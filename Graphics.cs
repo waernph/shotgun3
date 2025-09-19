@@ -13,7 +13,7 @@ class Graphics
         );
     }
 
-    public static void NotValidInput(int choice)
+    /* public static void NotValidInput(int choice)
     {
         choice -= 100;
         string[] errorMessage =
@@ -24,5 +24,5 @@ class Graphics
         ];
         //Console.WriteLine(choice);
         Console.WriteLine(errorMessage[choice]);
-    }
+    } */
 }
