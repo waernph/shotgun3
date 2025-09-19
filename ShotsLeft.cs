@@ -19,6 +19,6 @@ class ShotsLeft
 
     public int ShotCount()
     {
-        return shots;
+        return Shots;
     }
 }

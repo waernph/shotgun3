@@ -1,4 +1,4 @@
-public class RandomHelper
+class RandomHelper
 {
     private static Random _rnd = new Random();
 
@@ -7,4 +7,6 @@ public class RandomHelper
     public static int ComputerRandomInterval05() => _rnd.Next(0, 5);
 
     public static int ComputerRandomInterval59() => _rnd.Next(5, 9);
+
+    public static int WinnerRandom12() => _rnd.Next(1, 2);
 }

@@ -125,24 +125,24 @@ class Player
     private char ComputerRandomRoll()
     {
         string choices = "ssllbbhhhh";
-        int index;
+        int index = 0;
 
-        if (sl.ShotCount() == 0)
+        if (DisplayPlayersShots() == 0)
         {
             index = RandomHelper.ComputerRandomInterval24();
         }
-        else if (sl.ShotCount() > 0 && sl.ShotCount() < 3)
+        else if (DisplayPlayersShots() > 0 && DisplayPlayersShots() < 3)
         {
             index = RandomHelper.ComputerRandomInterval05();
         }
-        else
+        else if (DisplayPlayersShots() >= 3)
         {
             index = RandomHelper.ComputerRandomInterval59();
         }
         return choices[index];
     }
 
-    public void NotValidInput(int choice)
+    private void NotValidInput(int choice)
     {
         choice -= 100;
         string[] errorMessage =

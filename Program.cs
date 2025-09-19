@@ -1,7 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using System.Xml.Serialization;
-
-class Program
+﻿class Program
 {
     public static void Main()
     {
@@ -17,8 +14,16 @@ class Program
             Console.WriteLine(
                 $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
             );
-            player1.PlayerChoice();
-            player2.PlayerChoice();
+            int player1Choice = player1.PlayerChoice();
+            int player2Choice = 4 /*player2.PlayerChoice()*/;
+            Console.WriteLine(player2Choice);
+            string winner = Winner.WinnerIs(player1Choice, player2Choice);
+            if (winner == "Spelare 1" || winner == "Spelare 2")
+            {
+                Console.WriteLine($"\n{winner} vann!");
+                gameOn = false;
+            }
         }
     }
 }
+ 
