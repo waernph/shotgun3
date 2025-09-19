@@ -129,13 +129,17 @@ class Player
 
         if (DisplayPlayersShots() == 0)
         {
-            index = RandomHelper.ComputerRandomInterval24();
+            index = RandomHelper.ComputerRandomInterval23();
         }
-        else if (DisplayPlayersShots() > 0 && DisplayPlayersShots() < 3)
+        else if (DisplayPlayersShots() > 0 && DisplayPlayersShots() < 2)
         {
             index = RandomHelper.ComputerRandomInterval05();
         }
-        else if (DisplayPlayersShots() > 2)
+        else if (DisplayPlayersShots() == 2)
+        {
+            index = RandomHelper.ComputerRandomInterval14();
+        }
+        else if (DisplayPlayersShots() >= 3)
         {
             index = RandomHelper.ComputerRandomInterval59();
         }

@@ -40,7 +40,6 @@ class Winner
         {
             winner = "Spelare 2";
         }
-
         else if (player1Choice == 4 && player2Choice == 4)
         {
             int randomWinner = RandomHelper.WinnerRandom12();
