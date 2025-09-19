@@ -1,5 +1,3 @@
-using System.Formats.Asn1;
-
 class Winner
 {
     public static string WinnerIs(int player1Choice, int player2Choice)
