@@ -5,7 +5,7 @@ class Winner
     public static string WinnerIs(int player1Choice, int player2Choice)
     {
         string winner = "NoOne";
-        if (player1Choice == 1)
+        if (player1Choice == 1 && player2Choice != 4)
         {
             if (player2Choice == 1)
                 winner = "skjut - skjut";
@@ -14,7 +14,7 @@ class Winner
             else if (player2Choice == 3)
                 winner = "skjut - block";
         }
-        else if (player1Choice == 2)
+        else if (player1Choice == 2 && player2Choice != 4)
         {
             if (player2Choice == 1)
                 winner = "Spelare 2";
@@ -23,7 +23,7 @@ class Winner
             else if (player2Choice == 3)
                 winner = "ladda - block";
         }
-        else if (player1Choice == 3)
+        else if (player1Choice == 3 && player2Choice != 4)
         {
             if (player2Choice == 1)
                 winner = "block - skjut";

@@ -135,7 +135,7 @@ class Player
         {
             index = RandomHelper.ComputerRandomInterval05();
         }
-        else if (DisplayPlayersShots() >= 3)
+        else if (DisplayPlayersShots() > 2)
         {
             index = RandomHelper.ComputerRandomInterval59();
         }

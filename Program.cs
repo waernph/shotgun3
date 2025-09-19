@@ -15,8 +15,7 @@
                 $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
             );
             int player1Choice = player1.PlayerChoice();
-            int player2Choice = 4 /*player2.PlayerChoice()*/;
-            Console.WriteLine(player2Choice);
+            int player2Choice = player2.PlayerChoice();
             string winner = Winner.WinnerIs(player1Choice, player2Choice);
             if (winner == "Spelare 1" || winner == "Spelare 2")
             {

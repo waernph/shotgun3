@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("shotgun3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9bf808e0ed6ac9c8213cece05121f754cc98857")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97262c3574cf7d881f2ea7a80a5bb86b71d8fe70")]
 [assembly: System.Reflection.AssemblyProductAttribute("shotgun3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("shotgun3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
