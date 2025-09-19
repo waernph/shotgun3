@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.Security.Cryptography.X509Certificates;
+
+class Program
 {
     public static void Main()
     {
@@ -33,7 +35,7 @@
                         weapon = "hagelgevär";
                     }
 
-                    Console.WriteLine($"\n{winner} vann med {weapon}!");
+                    Console.WriteLine($"\n\n{winner} vann med {weapon}!");
                     while (!validInput)
                     {
                         Console.WriteLine("\nVill du spela igen? Y/N");
