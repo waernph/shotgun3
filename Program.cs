@@ -10,6 +10,7 @@
             bool gameOn = true;
             bool validInput = false;
             char userInput;
+
             while (gameOn)
             {
                 Console.Clear();

@@ -54,70 +54,75 @@ class Player
 
     public int PlayerChoice()
     {
-        char UserInput;
-        if (IsHuman) //Avgör om spelare ska få välja eller om det ska slumpas
+        int choice = 1;
+        do
         {
-            UserInput = PlayerInput();
-        }
-        else
-        {
-            UserInput = ComputerRandomRoll();
-        }
+            char UserInput;
+            if (IsHuman) //Avgör om spelare ska få välja eller om det ska slumpas
+            {
+                UserInput = PlayerInput();
+            }
+            else
+            {
+                UserInput = ComputerRandomRoll();
+            }
 
-        int choice = 101;
-        switch (UserInput)
-        {
-            case 's':
-                if (DisplayPlayersShots() > 0)
-                {
-                    FireShot();
-                    choice = 1;
+            switch (UserInput)
+            {
+                case 's':
+                    if (DisplayPlayersShots() > 0)
+                    {
+                        FireShot();
+                        choice = 1;
+                        break;
+                    }
+                    else
+                    {
+                        choice = 100; //Felkod. Inga skott
+                        goto default;
+                    }
+
+                case 'l':
+                    LoadShot();
+                    choice = 2;
                     break;
-                }
-                else
-                {
-                    choice = 100; //Felkod. Inga skott
-                    goto default;
-                }
 
-            case 'l':
-                LoadShot();
-                choice = 2;
-                break;
-
-            case 'b':
-                choice = 3;
-                break;
-
-            case 'h':
-                if (DisplayPlayersShots() >= 3)
-                {
-                    choice = 4;
+                case 'b':
+                    choice = 3;
                     break;
-                }
-                else
-                {
-                    choice = 102; //felkod. inte tillräckligt med skott för shotgun.
-                    goto default;
-                }
 
-            default:
-                if (choice != 100 && choice != 102)
-                {
-                    choice = 101; //felkod. felaktigt knapptryck
-                }
-                //Console.Clear();
-                break;
-        }
-        if (choice >= 100)
-        {
-            correctInput = false;
-            NotValidInput(choice);
-        }
-        else
-        {
-            correctInput = true;
-        }
+                case 'h':
+                    if (DisplayPlayersShots() >= 3)
+                    {
+                        choice = 4;
+                        break;
+                    }
+                    else
+                    {
+                        choice = 102; //felkod. inte tillräckligt med skott för shotgun.
+                        goto default;
+                    }
+
+                default:
+                    if (choice != 100 && choice != 102)
+                    {
+                        choice = 101; //felkod. felaktigt knapptryck
+                    }
+                    //Console.Clear();
+                    break;
+            }
+            if (choice >= 100)
+            {
+                Console.Clear();
+                Graphics.ShotgunLogo();
+                correctInput = false;
+                NotValidInput(choice);
+            }
+            else
+            {
+                correctInput = true;
+            }
+        } while (!correctInput);
 
         return choice;
     }
