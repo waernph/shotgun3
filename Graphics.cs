@@ -1,6 +1,6 @@
 class Graphics
 {
-    public void ShotgunLogo()
+    public static void ShotgunLogo()
     {
         Console.WriteLine(
             @"
@@ -13,7 +13,7 @@ class Graphics
         );
     }
 
-    public void NotValidInput(int choice)
+    public static void NotValidInput(int choice)
     {
         choice -= 100;
         string[] errorMessage =
