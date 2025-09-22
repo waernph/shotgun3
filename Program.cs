@@ -13,11 +13,7 @@
 
             while (gameOn)
             {
-                Console.Clear();
-                Graphics.ShotgunLogo();
-                Console.WriteLine(
-                    $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
-                );
+                Graphics.NewGraphic(player1, player2);
                 int player1Choice = player1.PlayerChoice();
                 int player2Choice = player2.PlayerChoice();
                 string winner = Winner.WinnerIs(player1Choice, player2Choice);

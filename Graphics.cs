@@ -12,4 +12,13 @@ class Graphics
     "
         );
     }
+
+    public static void NewGraphic(Player player1, Player player2)
+    {
+        Console.Clear();
+        ShotgunLogo();
+        Console.WriteLine(
+            $"Spelare 1: {player1.DisplayPlayersShots()} skott   |   Spelare 2: {player2.DisplayPlayersShots()} skott"
+        );
+    }
 }
