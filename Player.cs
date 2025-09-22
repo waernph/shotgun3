@@ -116,7 +116,7 @@ class Player
                 Console.Clear();
                 Graphics.ShotgunLogo();
                 correctInput = false;
-                NotValidInput(choice);
+                Graphics.NotValidInput(choice); //Visa rätt felmeddelande
             }
             else
             {
@@ -151,7 +151,7 @@ class Player
         return choices[index];
     }
 
-    private void NotValidInput(int choice)
+   /*  private void NotValidInput(int choice)
     {
         choice -= 100;
         string[] errorMessage =
@@ -164,5 +164,5 @@ class Player
         Console.WriteLine("\n" + errorMessage[choice]);
         Thread.Sleep(2000);
         //Console.ReadKey();
-    }
+    } */
 }
