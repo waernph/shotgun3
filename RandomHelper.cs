@@ -1,4 +1,4 @@
-class RandomHelper
+static class RandomHelper
 {
     private static Random _rnd = new Random();
 

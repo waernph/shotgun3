@@ -1,4 +1,4 @@
-class Graphics
+static class Graphics
 {
     public static void ShotgunLogo()
     {
