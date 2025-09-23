@@ -31,12 +31,14 @@ class Player
     //---------------------------------------------------------------
     private char PlayerInput()
     {
-        string[] Options =
-        [
-            "Välj (L)adda eller (B)locka ",
-            "Välj (S)kjut, (L)adda eller (B)locka ",
-            "Välj (S)kjut, (L)adda, (B)locka eller (H)agelgevär",
-        ];
+        string[] Options = //String-array för vad som ska skrivas ut.
+
+            //I if-satsen nedan bestäms vilket index i arrayen som ska skrivas ut beroende av DisplayShotsLeft
+            [
+                "Välj (L)adda eller (B)locka ",
+                "Välj (S)kjut, (L)adda eller (B)locka ",
+                "Välj (S)kjut, (L)adda, (B)locka eller (H)agelgevär",
+            ];
         if (DisplayPlayersShots() > 0 && DisplayPlayersShots() < 3)
         {
             Console.Write(Options[1]);
@@ -116,7 +118,7 @@ class Player
                 Console.Clear();
                 Graphics.ShotgunLogo();
                 correctInput = false;
-                Graphics.NotValidInput(choice); //Visa rätt felmeddelande
+                Graphics.NotValidInput(choice);
             }
             else
             {
@@ -150,19 +152,4 @@ class Player
         }
         return choices[index];
     }
-
-   /*  private void NotValidInput(int choice)
-    {
-        choice -= 100;
-        string[] errorMessage =
-        [
-            "Du har inga skott, försök inte!",
-            "Valet finns inte. Försök igen",
-            "Du måste ha minst 3 skott",
-        ];
-        //Console.WriteLine(choice);
-        Console.WriteLine("\n" + errorMessage[choice]);
-        Thread.Sleep(2000);
-        //Console.ReadKey();
-    } */
 }
