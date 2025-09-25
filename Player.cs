@@ -110,7 +110,6 @@ class Player
                     {
                         choice = 101; //felkod. felaktigt knapptryck
                     }
-                    //Console.Clear();
                     break;
             }
             if (choice >= 100)
