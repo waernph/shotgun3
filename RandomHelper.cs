@@ -1,6 +1,6 @@
 static class RandomHelper
 {
-    private static Random rnd = new Random();
+    static Random rnd = new Random();
 
     public static int ComputerRandomInterval23()
     {

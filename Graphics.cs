@@ -13,7 +13,7 @@ static class Graphics
         );
     }
 
-    public static void NewGraphic(Player player1, Player player2)
+    public static void AntalSkott(Player player1, Player player2)
     {
         Console.Clear();
         ShotgunLogo();
@@ -35,5 +35,10 @@ static class Graphics
         Console.WriteLine("\n" + errorMessage[choice]);
         Thread.Sleep(2000);
         //Console.ReadKey();
+    }
+
+    public static void PlayAgain()
+    {
+        Console.WriteLine("\nVill du spela igen? Y/N");
     }
 }

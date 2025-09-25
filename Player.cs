@@ -112,6 +112,8 @@ class Player
                     }
                     break;
             }
+            Console.Clear();
+            Graphics.ShotgunLogo();
             if (choice >= 100)
             {
                 Console.Clear();
