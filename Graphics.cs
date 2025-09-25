@@ -85,7 +85,8 @@ static class Graphics
         }
         else
         {
-            Console.WriteLine("Felaktig inmatning. Spelare två satt till dator");
+            Console.WriteLine("\nFelaktig inmatning. Spelare två satt till dator");
+            Thread.Sleep(2000);
             return false;
         }
     }
