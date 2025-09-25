@@ -47,8 +47,12 @@
                     {
                         weapon = "hagelgevär";
                     }
-
-                    Console.WriteLine($"\n\n{winner} vann med {weapon}!");
+                    Console.Clear();
+                    Graphics.ShotgunLogo();
+                    Graphics.AntalSkott(player1, player2);
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine($"\n{winner} vann med {weapon}!");
+                    Console.ForegroundColor = ConsoleColor.White;
                     while (!validInput)
                     {
                         Graphics.PlayAgain();
