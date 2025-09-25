@@ -2,27 +2,14 @@
 {
     public static void Main()
     {
-        Graphics.ShotgunLogo();
+        Graphics.ShotgunLogoAnimation();
+        //Graphics.ShotgunLogo();
         bool restart = true;
-        bool playerTwo;
-        Console.WriteLine("Vill du spela mot datorn? Y/N");
-        char PlayerIsHuman = char.ToLower(Console.ReadKey().KeyChar);
-        if (PlayerIsHuman == 'y')
-        {
-            playerTwo = false;
-        }
-        else if (PlayerIsHuman == 'n')
-        {
-            playerTwo = true;
-        }
-        else
-        {
-            Console.WriteLine("Felaktig inmatning. Spelare två satt till dator");
-            playerTwo = false;
-        }
+        Console.Title = "SHOTGUN!";
 
         while (restart)
         {
+            bool playerTwo = Graphics.PlayerIsHuman();
             Player player1 = new Player(true);
             Player player2 = new Player(playerTwo);
             bool gameOn = true;
@@ -31,9 +18,13 @@
             while (gameOn)
             {
                 Graphics.AntalSkott(player1, player2);
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("Spelare 1");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 int player1Choice = player1.PlayerChoice();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("Spelare 2");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 int player2Choice = player2.PlayerChoice();
                 string winner = Winner.WinnerIs(player1Choice, player2Choice);
                 if (winner == "Spelare 1" || winner == "Spelare 2")
@@ -52,7 +43,7 @@
                     Graphics.AntalSkott(player1, player2);
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine($"\n{winner} vann med {weapon}!");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     while (!validInput)
                     {
                         Graphics.PlayAgain();
