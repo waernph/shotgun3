@@ -74,12 +74,12 @@ static class Graphics
     public static bool PlayerIsHuman()
     {
         Console.Write("\nVill du spela mot datorn? Y/N");
-        char PlayerIsHuman = char.ToLower(Console.ReadKey().KeyChar);
-        if (PlayerIsHuman == 'y')
+        char PlayerIsComputer = char.ToLower(Console.ReadKey().KeyChar);
+        if (PlayerIsComputer == 'y')
         {
             return false;
         }
-        else if (PlayerIsHuman == 'n')
+        else if (PlayerIsComputer == 'n')
         {
             return true;
         }
