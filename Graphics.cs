@@ -53,7 +53,10 @@ static class Graphics
             "Valet finns inte. Försök igen",
             "Du måste ha minst 3 skott",
         ];
+        Console.Beep();
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("\n" + errorMessage[choice]);
+        Console.ForegroundColor = ConsoleColor.Gray;
         while (time >= 1)
         {
             Console.CursorVisible = false;
