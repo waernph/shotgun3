@@ -1,10 +1,10 @@
 class ShotsLeft
 {
-    private int shots;
-    private int Shots
+    private int _shots;
+    public int Shots
     {
-        get { return shots; }
-        set { shots = value; }
+        get { return _shots; }
+        private set { _shots = value; }
     }
 
     public void FireShot()
@@ -15,10 +15,5 @@ class ShotsLeft
     public void LoadShot()
     {
         Shots += 1;
-    }
-
-    public int ShotCount()
-    {
-        return Shots;
     }
 }

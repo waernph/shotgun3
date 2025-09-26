@@ -1,8 +1,15 @@
+using System.Runtime.CompilerServices;
+
 class Player
 {
-    private bool IsHuman { get; set; }
+    private bool _isHuman;
+    public bool IsHuman
+    {
+        get { return _isHuman; }
+        private set { _isHuman = value; }
+    }
 
-    public Player(bool isHuman = false)
+    public Player(bool isHuman)
     {
         IsHuman = isHuman;
     }
@@ -15,7 +22,7 @@ class Player
     // Metoder för att reutrnera skott, subtrahera/addera skott
     public int DisplayPlayersShots()
     {
-        return sl.ShotCount();
+        return sl.Shots;
     }
 
     public void FireShot()

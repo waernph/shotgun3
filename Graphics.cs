@@ -1,5 +1,3 @@
-using Microsoft.VisualBasic;
-
 static class Graphics
 {
     public static void ShotgunLogo()
