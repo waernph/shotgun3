@@ -14,7 +14,7 @@ class Player
         IsHuman = isHuman;
     }
 
-    public bool correctInput = true;
+    private bool correctInput = true;
 
     ShotsLeft sl = new ShotsLeft();
 
@@ -25,14 +25,9 @@ class Player
         return sl.Shots;
     }
 
-    public void FireShot()
+    private void Action(char userInput)
     {
-        sl.FireShot();
-    }
-
-    public void LoadShot()
-    {
-        sl.LoadShot();
+        sl.AddOrSubtractShot(userInput);
     }
 
     //---------------------------------------------------------------
@@ -66,22 +61,22 @@ class Player
         int choice = 1;
         do
         {
-            char UserInput;
+            char userInput;
             if (IsHuman) //Avgör om spelare ska få välja eller om det ska slumpas
             {
-                UserInput = PlayerInput();
+                userInput = PlayerInput();
             }
             else
             {
-                UserInput = ComputerRandomRoll();
+                userInput = ComputerRandomRoll();
             }
 
-            switch (UserInput)
+            switch (userInput)
             {
                 case 's':
                     if (DisplayPlayersShots() > 0)
                     {
-                        FireShot();
+                        Action(userInput);
                         choice = 1;
                         break;
                     }
@@ -92,7 +87,7 @@ class Player
                     }
 
                 case 'l':
-                    LoadShot();
+                    Action(userInput);
                     choice = 2;
                     break;
 

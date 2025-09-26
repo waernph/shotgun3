@@ -7,13 +7,15 @@ class ShotsLeft
         private set { _shots = value; }
     }
 
-    public void FireShot()
+    public void AddOrSubtractShot(char userInput)
     {
-        Shots -= 1;
-    }
-
-    public void LoadShot()
-    {
-        Shots += 1;
+        if (userInput == 's')
+        {
+            Shots -= 1;
+        }
+        else if (userInput == 'l')
+        {
+            Shots += 1;
+        }
     }
 }
