@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 class Player
 {
     private bool _isHuman;
