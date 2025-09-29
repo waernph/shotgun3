@@ -151,6 +151,7 @@ class Player
         {
             index = RandomHelper.ComputerRandomInterval59();
         }
+        Thread.Sleep(1000);
         return choices[index];
     }
 }
