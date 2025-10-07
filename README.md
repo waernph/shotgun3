@@ -1,7 +1,7 @@
 ## Beskrivning av projekt
 En inlämningsuppgift som går ut på att skapa spelet Shotgun. 
 Shotgun är likt sten, sax, påse men det läggs även till ett fjärde alternativ
-när vissa vilkor är uppfylda.
+när vissa vilkor är uppfylda. I mappen published ligger exe.
 
 ## Logik för spelet.
 Skjuta -Förlorar ett skott. Kan bara användas om skott finns.
