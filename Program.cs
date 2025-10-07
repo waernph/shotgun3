@@ -3,7 +3,6 @@
     public static void Main()
     {
         Graphics.ShotgunLogoAnimation();
-        //Graphics.ShotgunLogo();
         bool restart = true;
         Console.Title = "SHOTGUN!";
 
@@ -62,7 +61,6 @@
                         {
                             validInput = false;
                             Console.Clear();
-                            //Graphics.NewGraphic(player1, player2);
                             Console.WriteLine($"{winner} vann med {weapon}!");
                         }
                     }
